@@ -8,20 +8,51 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-yellow-100 min-h-screen">
-    <div class="container mx-auto px-4 py-8 max-w-6xl">
+<body class="bg-yellow-100 min-h-screen relative">
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+        <div class="absolute -top-32 -left-32 w-96 h-96 bg-yellow-500 rounded-full border-b border-2 border-gray-300"></div>
+        <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-yellow-500 rounded-full border-b border-2 border-gray-300"></div>
+      
+        
+        <div class="absolute bottom-40 left-1/4 w-80 h-80 bg-yellow-400 rounded-full border-b border-2 border-gray-300"></div>
+        <div class="absolute top-10 left-1/2 w-56 h-56 bg-yellow-500 rounded-full border-b border-2 border-gray-300"></div>
+        <div class="absolute -bottom-10 -left-20 w-40 h-40 bg-yellow-500 rounded-full border-b border-2 border-gray-300"></div>
+        <div class="absolute top-10 -right-20 w-40 h-40 bg-yellow-400 rounded-full border-b border-2 border-gray-300"></div>
+    </div>
 
-        <header class="text-center mb-12">
-            <div class="bg-transparent border border-black p-8">
+    <nav class="bg-transparent border-b border-black sticky top-0 z-50  bg-yellow-100 bg-opacity-95">
+        <div class="container mx-auto px-4 py-4 max-w-6xl">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-3">
+                    <span class="text-2xl font-bold text-black">Task-Manager</span>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="#tasks" class="text-black hover:text-gray-700 font-medium flex items-center">
+                        <i class="fas fa-list mr-2"></i>Tasks
+                    </a>
+                    <a href="#progress" class="text-black hover:text-gray-700 font-medium flex items-center">
+                        <i class="fas fa-chart-line mr-2"></i>Progress
+                    </a>
+                    <button onclick="taskManager.showStats()" class="text-black hover:text-gray-700 font-medium flex items-center">
+                        <i class="fas fa-chart-bar mr-2"></i>Stats
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto px-4 py-8 max-w-6xl relative z-10">
+
+        <header id="progress" class="text-center mb-12">
+            <div class="bg-yellow-100 bg-opacity-95 border border-black p-8">
                 <div class="flex items-center justify-center mb-4">
-                    <div class="bg-gray-600 p-3 mr-4">
-                        <i class="fas fa-tasks text-white text-2xl"></i>
-                    </div>
-                    <h1 class="text-5xl font-bold text-black">
+                    
+                    <h1 class="text-5xl font-sans text-black">
                         Task Manager
                     </h1>
                 </div>
-                <p class="text-black text-lg">Organize your tasks and boost your productivity</p>
+                <p class="text-black text-xl italic">A minimalist web app to organize your day, track progress, and stay productive — 
+    even when you're offline. No logins. No distractions. Just your tasks, your way.</p>
             </div>
         </header>
         <div class="bg-transparent border border-black p-8 mb-8">
@@ -31,17 +62,17 @@
                 </h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
-                <div class="text-center p-6 bg-blue-500 text-white border border-black">
+                <div class="text-center p-6 bg-[#12296c] text-white border border-black">
                     <div class="text-4xl font-bold mb-2" id="totalTasks">0</div>
                     <div class="text-blue-100 font-medium">Total Tasks</div>
                     <i class="fas fa-list-ul text-3xl mt-2 opacity-50"></i>
                 </div>
-                <div class="text-center p-6 bg-green-500 text-white border border-black">
+                <div class="text-center p-6 bg-[#95bf44] text-white border border-black">
                     <div class="text-4xl font-bold mb-2" id="completedTasks">0</div>
                     <div class="text-green-100 font-medium">Completed</div>
                     <i class="fas fa-check-circle text-3xl mt-2 opacity-50"></i>
                 </div>
-                <div class="text-center p-6 bg-orange-500 text-white border border-black">
+                <div class="text-center p-6 bg-[#e41c2a] text-white border border-black">
                     <div class="text-4xl font-bold mb-2" id="pendingTasks">0</div>
                     <div class="text-orange-100 font-medium">Pending</div>
                     <i class="fas fa-clock text-3xl mt-2 opacity-50"></i>
@@ -56,8 +87,8 @@
         </div>
         <div class="bg-transparent border border-black p-8 mb-8">
             <div class="flex items-center mb-6">
-                <div class="bg-gray-600 p-3 mr-4">
-                    <i class="fas fa-plus text-white text-xl"></i>
+                <div class="bg-transparent p-3 ">
+                    <i class="fas fa-plus text-black text-2xl"></i>
                 </div>
                 <h2 class="text-3xl font-bold text-black">
                     Add New Task
@@ -65,7 +96,7 @@
             </div>
             <form id="taskForm" class="space-y-4">
                 <div class="flex flex-col lg:flex-row gap-4">
-                    <div class="flex-1">
+                    <div class="flex-1 bg-yellow-100">
                         <input 
                             type="text" 
                             id="taskInput" 
@@ -86,7 +117,7 @@
                     </div>
                     <button 
                         type="submit" 
-                        class="px-8 py-4 bg-gray-600 text-white hover:bg-gray-700 text-lg font-semibold border border-black"
+                        class="px-8 py-4 bg-transparent text-black hover:bg-gray-700 text-lg font-semibold border border-black"
                     >
                         <i class="fas fa-plus mr-2"></i>Add Task
                     </button>
@@ -97,7 +128,7 @@
         <div class="bg-transparent border border-black p-6 mb-8">
             <div class="flex flex-col lg:flex-row gap-6 items-center justify-between">
                 <div class="flex flex-wrap gap-3">
-                    <button id="filterAll" class="px-6 py-3 bg-gray-600 text-white hover:bg-gray-700 font-medium border border-black">
+                    <button id="filterAll" class="px-6 py-3 bg-gray-200 text-black hover:bg-gray-300 font-medium border border-black">
                         <i class="fas fa-list mr-2"></i>All
                     </button>
                     <button id="filterPending" class="px-6 py-3 bg-gray-200 text-black hover:bg-gray-300 font-medium border border-black">
@@ -124,10 +155,10 @@
         </div>
 
         <!-- list -->
-        <div class="bg-transparent border border-black p-8">
+        <div id="tasks" class="bg-transparent border border-black p-8">
             <div class="flex items-center mb-6">
-                <div class="bg-gray-600 p-3 mr-4">
-                    <i class="fas fa-list-check text-white text-xl"></i>
+                <div class="bg-transparent p-3">
+                    <i class="fas fa-list-check text-black text-2xl"></i>
                 </div>
                 <h2 class="text-3xl font-bold text-black">
                     Your Tasks

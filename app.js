@@ -127,6 +127,12 @@ class TaskManager {
             document.getElementById('editTaskId').value = task.id;
             document.getElementById('editTaskInput').value = task.text;
             document.getElementById('editPrioritySelect').value = task.priority;
+            
+            // Set background color
+            const modal = document.getElementById('editModal');
+            modal.querySelector('.bg-white, .bg-gray-100, .bg-blue-100')?.classList.remove('bg-white', 'bg-gray-100', 'bg-blue-100');
+            modal.querySelector('div')?.classList.add('bg-yellow-100');
+            
             this.openEditModal();
         }
     }
@@ -470,7 +476,7 @@ class TaskManager {
         modal.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
         
         modal.innerHTML = `
-            <div class="bg-transparent border border-black p-8 w-full max-w-lg mx-4">
+            <div class="bg-yellow-100 border border-black p-8 w-full max-w-lg mx-4">
                 <div class="text-center mb-6">
                     <div class="bg-gray-600 p-3 w-16 h-16 mx-auto mb-4">
                         <i class="fas fa-chart-bar text-white text-2xl"></i>
