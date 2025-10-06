@@ -11,35 +11,6 @@ A modern, responsive task management application built with HTML, CSS, JavaScrip
 - **Delete Tasks**: Remove individual tasks or clear all completed ones
 - **Progress Tracking**: Visual progress bar and statistics
 
-### Advanced Features
-- **Priority Levels**: High, Medium, and Low priority with color coding
-- **Filtering**: View All, Pending, or Completed tasks
-- **Sorting**: Sort by newest, oldest, priority, or alphabetical order
-- **Local Storage**: Automatic data persistence between sessions
-- **Responsive Design**: Works seamlessly on desktop and mobile
-- **Offline Support**: Service Worker for offline functionality
-- **Progress Overview**: Real-time statistics and completion percentage
-
-### User Experience
-- **Keyboard Shortcuts**: Ctrl/Cmd + Enter to quickly add tasks
-- **Smooth Animations**: CSS transitions for better UX
-- **Modern UI**: Clean design with Tailwind CSS
-- **Accessibility**: Proper ARIA labels and keyboard navigation
-
-## Technology Stack
-
-- **Frontend**: HTML5, CSS3, JavaScript (ES6+)
-- **Styling**: Tailwind CSS
-- **Icons**: Font Awesome
-- **Storage**: Browser LocalStorage
-- **Offline**: Service Worker API
-
-## Getting Started
-
-### Prerequisites
-- A modern web browser (Chrome, Firefox, Safari, Edge)
-- No additional installations required
-
 ### Installation
 1. Clone or download this repository
 2. Open `index.html` in your web browser
@@ -71,5 +42,6 @@ A modern, responsive task management application built with HTML, CSS, JavaScrip
 - Clear browser data to reset the app
 
 ## License
+
 
 This project is open source and available under the MIT License.
