@@ -1,0 +1,147 @@
+/* Simple Task Manager Styles - Minimal Design */
+
+/* Import Google Fonts for better typography */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* Global styles */
+* {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Task item basic styling */
+.task-item {
+    background: transparent !important;
+    border: 4px solid #000000; /* Black border */
+    width: 100%;
+}
+
+.task-removing {
+    opacity: 0.5;
+}
+
+/* Priority indicators - remove background colors, keep border indicators */
+.priority-high {
+    border-left: 8px solid #ef4444;
+}
+
+.priority-medium {
+    border-left: 8px solid #f59e0b;
+}
+
+.priority-low {
+    border-left: 8px solid #10b981;
+}
+
+/* Completed task styling */
+.task-completed {
+    opacity: 0.7;
+    background: transparent !important;
+}
+
+.task-completed .task-text {
+    text-decoration: line-through;
+    color: #64748b;
+}
+
+/* Filter button active state */
+.filter-active {
+    background-color: #374151 !important;
+    color: white !important;
+}
+
+/* Progress bar */
+#progressBar {
+    transition: width 0.3s ease;
+}
+
+/* FAB Menu visibility */
+#fabMenu.opacity-100 {
+    opacity: 1;
+}
+
+#fabMenu.scale-100 {
+    transform: scale(1);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .task-item {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .task-actions {
+        flex-direction: row;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+    
+    .task-actions button {
+        flex: 1;
+        justify-content: center;
+        padding: 0.75rem;
+    }
+    
+    /* Touch-friendly targets */
+    button, input, select {
+        min-height: 44px;
+    }
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #94a3b8;
+    border: 2px solid #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+/* Accessibility improvements */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+    outline: 2px solid #374151;
+    outline-offset: 2px;
+}
+
+/* Print styles */
+@media print {
+    .task-actions,
+    .filter-buttons,
+    .add-task-form {
+        display: none !important;
+    }
+    
+    .task-item {
+        break-inside: avoid;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        padding: 1rem;
+    }
+    
+    body {
+        background: white !important;
+    }
+}
+.rounded-lg {
+    border-radius: 1rem;
+}
