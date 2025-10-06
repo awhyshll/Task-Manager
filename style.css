@@ -4,15 +4,14 @@
 /* Hide scrollbar for all browsers */
 * {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
 }
 
 *::-webkit-scrollbar {
     display: none;
 }
 
-/* Keep body and html scrollable */
 html, body {
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -24,7 +23,7 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
 
 .task-item {
     background: transparent !important;
-    border: 4px solid #000000; /* Black border */
+    border: 4px solid #000000; 
     width: 100%;
 }
 
@@ -71,7 +70,6 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
     transform: scale(1);
 }
 
-/* Mobile responsiveness */
 @media (max-width: 768px) {
     .container {
         padding: 1rem;
@@ -94,18 +92,15 @@ html::-webkit-scrollbar, body::-webkit-scrollbar {
         padding: 0.75rem;
     }
     
-    /* Touch-friendly targets */
     button, input, select {
         min-height: 44px;
     }
 }
 
-/* Smooth scrolling */
 html {
     scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -123,7 +118,6 @@ html {
     background: #64748b;
 }
 
-/* Accessibility improvements */
 button:focus-visible,
 input:focus-visible,
 select:focus-visible {
@@ -131,7 +125,6 @@ select:focus-visible {
     outline-offset: 2px;
 }
 
-/* Print styles */
 @media print {
     .task-actions,
     .filter-buttons,
