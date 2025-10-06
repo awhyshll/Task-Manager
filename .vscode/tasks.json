@@ -1,0 +1,15 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Launch Task Manager",
+			"type": "shell",
+			"command": "start",
+			"args": [
+				"index.html"
+			],
+			"isBackground": false,
+			"group": "build"
+		}
+	]
+}
